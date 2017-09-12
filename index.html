@@ -4,6 +4,7 @@
   <meta charset='UTF-8'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crystal Collector</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> 
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -14,6 +15,46 @@
 
 </head>
 
+<!-- Content -->
 <body>
+  <!-- Header Image -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+      <p class='brand'>Crystal Collector</p>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class='row'>
+  <div class='col-md-6'>
+    <p id='directions'>Directions</p>
+  </div>
+  <div class='col-md-6'>
+    <div class='score'>
+      <p id='target-score'>0</p>
+    </div>
+    <div class='crystals'>
+      <img id='crystal' src='assets/images/crystal.png' />
+      <img id='diamond' src='assets/images/diamond.png' />
+      <img id='gemstone' src='assets/images/gemstone.png' />
+      <img id='ruby' src='assets/images/ruby.png' />
+    </div>
+    <div class='score-text'>
+      <p>Your total score is:</p>
+    </div>
+    <div class='score'>
+      <p id='user-score'>0</p>
+    </div>
+  </div>
+</div>
 </body>
 </html>
