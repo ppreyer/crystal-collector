@@ -1,5 +1,8 @@
 // Game Object
 var gameObject = {
+  wins: 0,
+  losses: 0,
+  targetScore: 0,
   userScore: 0,
   cStatus: 'new game',
   dStatus: 'new game',
@@ -13,26 +16,31 @@ var gameObject = {
 
 // Create a function to generate random number for the user to target as their score
 $(document).ready(function() {
-  // When target-score is clicked...
-  $("#target-score").on("click", function() {
     // Generate a random number between 19-120
     var randomNumber = getRandomInt(20, 121);
+    // Assign randomNumber to targetScore
+    gameObject.targetScore = randomNumber;
+    // Check score
+    checkScore();
     // Add random number into the target-score element
     $("#target-score").html(randomNumber);
-  });
-  $("#crystal").on("click", function() {
+    $("#crystal").on("click", function() {
     checkCrystal();
-  })
-  $("#diamond").on("click", function() {
+    checkScore();
+    })
+    $("#diamond").on("click", function() {
     checkDiamond();
-  })
-  $("#gemstone").on("click", function() {
+    checkScore();
+    })
+    $("#gemstone").on("click", function() {
     checkGemstone();
-  })
-  $("#ruby").on("click", function() {
+    checkScore();
+    })
+    $("#ruby").on("click", function() {
     checkRuby();
-  })
-})
+    checkScore();
+    })
+});
 
 // // Function that assigns stone value on click
 // function assignStoneValue() {
@@ -136,6 +144,40 @@ function checkRuby() {
       } else {
       return;
     }
+}
+
+// Check score function
+function checkScore() {
+  // Conditional - check if userScore > targetScore
+  if(gameObject.userScore > gameObject.targetScore) {
+    // Reset game and add one to loss column
+    gameObject.losses++;
+    $("#losses").html(gameObject.losses);
+    resetGame();
+  } else if(gameObject.userScore === gameObject.targetScore) {
+    // Reset game and add one to win column
+    gameObject.wins++
+    $("#wins").html(gameObject.wins);
+    resetGame();
+  } else {
+    return;
+  }
+}
+
+// Reset game function
+function resetGame() {
+  gameObject.targetScore = getRandomInt(20, 121);
+  $("#target-score").html(gameObject.targetScore);
+  gameObject.userScore = 0;
+  $("#user-score").html(gameObject.userScore);
+  gameObject.cStatus = 'new game';
+  gameObject.dStatus = 'new game';
+  gameObject.gStatus = 'new game';
+  gameObject.rStatus = 'new game';
+  crystalValue = 0;
+  diamondValue = 0;
+  gemstoneValue = 0;
+  rubyValue = 0;
 }
 
 
