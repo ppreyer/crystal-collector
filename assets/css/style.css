@@ -1,0 +1,43 @@
+body {
+  background: url('../../assets/images/gaming-pattern.png');
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  background-color: #111111;
+}
+span {
+  color: #ffffff;
+}
+
+#score-panel {
+  margin-top: 40px;
+}
+
+#record-row {
+  margin-bottom: 10px;
+}
+
+.stone {
+  width: 20%;
+}
+
+.stone:hover {
+  opacity: 0.5;
+}
+
+.stone:active {
+  transform: translateY(4px);
+}
+
+span:hover {
+  opacity: 0.5;
+}
+
+span:active {
+  transform: translateY(4px);
+}
