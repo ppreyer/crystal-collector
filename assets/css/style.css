@@ -10,10 +10,14 @@ body {
 .container-fluid {
   background-color: #111111;
 }
-span {
+
+.title {
   color: #ffffff;
 }
 
+#main-row {
+  margin: 0 10px;
+}
 #score-panel {
   margin-top: 40px;
 }
@@ -32,6 +36,11 @@ span {
 
 .stone:active {
   transform: translateY(4px);
+}
+
+#wins,
+#losses {
+  color: black;
 }
 
 span:hover {
